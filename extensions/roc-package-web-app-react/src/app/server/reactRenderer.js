@@ -252,13 +252,14 @@ export function reactRender({
                         status,
                     });
                 })
-                .catch((err) => {
+                .catch((err) => {                  
                     if (err) {
                         log('General error', pretty.render(err));
                     }
+                    const { status = 500 } = err || {};
                     return resolve({
-                        status: 500,
-                        body: renderPage({ error: err, request, status: 500 }),
+                        status,
+                        body: renderPage({ error: err, request, status }),
                     });
                 });
             });
