@@ -252,7 +252,7 @@ export function reactRender({
                         status,
                     });
                 })
-                .catch((err) => {                  
+                .catch((err) => {
                     if (err) {
                         log('General error', pretty.render(err));
                     }
